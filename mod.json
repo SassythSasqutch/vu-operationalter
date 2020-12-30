@@ -1,0 +1,13 @@
+{
+	"Name": "Operation Alter",
+	"Description": "Thunder Run in Conquest Large, US vs MEC.",
+	"Version": "0.5",
+	"Authors": "SassythSasqutch",
+	"HasVeniceEXT": true,
+	"HasWebUI": false,
+	"Dependencies": {},
+	"Tags": [
+        "thunderrunterrain",
+        "sp-showcase"
+	]
+}
