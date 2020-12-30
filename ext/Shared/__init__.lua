@@ -922,3 +922,5 @@ end)
 
 -- NOTE: Addition/deletion of buildings, roads, etc. will be done with MapEditor ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Few things will be added/removed, because this mod is just a showcase; although, I am keen to make a large-scale BF2:PR Kashan Desert-like map for Reality Mod at some point; probably when terrain editing comes to flatten land for runways.
+
+-- Test
