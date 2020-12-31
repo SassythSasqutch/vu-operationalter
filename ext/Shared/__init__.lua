@@ -4,11 +4,11 @@ spMap = 'sp_tank' -- The SP or COOP map to load - there are also some GUIDs for 
 
 -- Check map being loaded
 Events:Subscribe('Level:LoadResources', function(levelName, gameMode, isDedicatedServer)
-    if levelName ~= 'Levels/MP_012/MP_012' then
-        print('Server is not loading Operation Firestorm MP_012 - closing...')
-        return
+    if levelName ~= 'Levels/MP_012/MP_012' or gameMode ~= 'ConquestLarge0' then
+        print('Server is not loading Operation Firestorm MP_012 Conquest Large - closing...')
+        --os.exit()
     else
-        print('Operation Firestorm MP_012 being loaded - loading '..spMap)
+        print('Operation Firestorm MP_012 Conquest Large being loaded - loading '..spMap)
     end
 end)
 --------------------------

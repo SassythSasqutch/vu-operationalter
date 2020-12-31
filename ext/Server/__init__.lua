@@ -1,7 +1,7 @@
 -- Check map being loaded
 Events:Subscribe('Level:LoadResources', function(levelName, gameMode, isDedicatedServer)
-    if levelName ~= 'Levels/MP_012/MP_012' then
-        return
+    if levelName ~= 'Levels/MP_012/MP_012' or gameMode ~= 'ConquestLarge0' then
+        --os.exit()
     end
 end)
 
