@@ -19,7 +19,4 @@ Events:Subscribe('Level:LoadResources', function(levelName, gameMode, round, rou
     vicSpawn = RCON:SendCommand('vars.vehicleSpawnAllowed', {'false'})
     print('Disabled vehicle spawn:')
     print(vicSpawn)
-    vicDesert = RCON:SendCommand('vu.DesertingAllowed', {'false'})
-    print('Disabled vehicle desert:')
-    print(vicDesert)
 end)

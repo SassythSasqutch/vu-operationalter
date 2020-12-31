@@ -770,9 +770,9 @@ local abramsSpawn6 = LinearTransform(           -- Replacing AH-1
 
     thisInstance.blueprint = 
 
-end)]]
+end)
 
---[[ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'), Guid('5DF090F3-3918-443B-A16C-3940EFC71266'), function(instance) -- Abrams spawn
+ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'), Guid('5DF090F3-3918-443B-A16C-3940EFC71266'), function(instance) -- Abrams spawn
 
     local thisInstance = VehicleSpawnReferenceObjectData(instance)
     thisInstance:MakeWritable()
