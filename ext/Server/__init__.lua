@@ -6,7 +6,7 @@ Events:Subscribe('Level:LoadResources', function(levelName, gameMode, isDedicate
 end)
 
 -- Set custom map name
-ServerUtils:SetCustomMapName('Operation Alter') -- May want to change this for different maps
+ServerUtils:SetCustomMapName('Thunder Run') -- May want to change this for different maps
 
 -- Set server banner
 Events:Subscribe('Level:LoadResources', function(levelName, gameMode, round, roundsPerMap)

@@ -23,7 +23,7 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1A
     thisInstance.fields[21].value = 'CString "Desert Fort"' -- Default Construction Site
     thisInstance.fields[20].value = 'CString "Oil Plant"' -- Default Warehouse
     thisInstance.fields[18].value = 'CString "Checkpoint \'Tarmac\'"' -- Default Filling Station
-    thisInstance.fields[22].value = 'CString "Overpass"' -- Default Offices
+    thisInstance.fields[22].value = 'CString "Objective \'Alter\'"' -- Default Offices
     thisInstance.fields[19].value = 'CString "Construction Site"' -- Default Army Outpost
 
 end)
