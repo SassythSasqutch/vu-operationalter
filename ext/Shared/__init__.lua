@@ -2,6 +2,15 @@
 
 spMap = 'sp_tank' -- The SP map to load - there are also some GUIDs for directories and terrain data to change when converting this to other maps. Where this has to be done, there is a comment at the end of the line.
 
+-- Check map being loaded
+Events:Subscribe('Level:LoadResources', function(levelName, gameMode, isDedicatedServer)
+    if levelName ~= 'Levels/MP_012/MP_012' then
+        print('Server is not loading Operation Firestorm MP_012 - closing...')
+        return
+    else
+        print('Operation Firestorm MP_012 being loaded - loading '..spMap)
+    end
+end)
 --------------------------
 -- Remove MP_012 assets --
 --------------------------
@@ -651,7 +660,23 @@ end)]]
 
 -- United States -1857, 73, -271
 
+ResourceManager:RegisterInstanceLoadHandler(Guid('C1649E85-AFEF-4D3B-80B9-AB847FA7536C'), Guid('6AA1D505-D1FD-49AF-866B-F833C35E1933'), function(instance)
+
+    local thisInstance = ReferenceObjectData(instance)
+    thisInstance:MakeWritable()
+    thisInstance.blueprintTransform.trans = Vec3(-1857, 73, -271)
+
+end)
+
 -- Middle Eastern Coalition 164, 77, -1047
+
+ResourceManager:RegisterInstanceLoadHandler(Guid('C1649E85-AFEF-4D3B-80B9-AB847FA7536C'), Guid('E78C2DC8-9CA8-4458-B54F-57DCA1B559E4'), function(instance)
+
+    local thisInstance = ReferenceObjectData(instance)
+    thisInstance:MakeWritable()
+    thisInstance.blueprintTransform.trans = Vec3(164, 77, -1047)
+
+end)
 
 -- Objective positions --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -1,3 +1,10 @@
+-- Check map being loaded
+Events:Subscribe('Level:LoadResources', function(levelName, gameMode, isDedicatedServer)
+    if levelName ~= 'Levels/MP_012/MP_012' then
+        return
+    end
+end)
+
 -- Remove minimap
 Hooks:Install('UI:RenderMinimap', 100, function(hook)
     --print('Blocking minimap render...')

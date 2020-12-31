@@ -1,3 +1,10 @@
+-- Check map being loaded
+Events:Subscribe('Level:LoadResources', function(levelName, gameMode, isDedicatedServer)
+    if levelName ~= 'Levels/MP_012/MP_012' then
+        return
+    end
+end)
+
 -- Set custom map name
 ServerUtils:SetCustomMapName('Operation Alter') -- May want to change this for different maps
 
