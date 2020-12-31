@@ -6,7 +6,7 @@ spMap = 'sp_tank' -- The SP or COOP map to load - there are also some GUIDs for 
 Events:Subscribe('Level:LoadResources', function(levelName, gameMode, isDedicatedServer)
     if levelName ~= 'Levels/MP_012/MP_012' or gameMode ~= 'ConquestLarge0' then
         print('Server is not loading Operation Firestorm MP_012 Conquest Large - closing...')
-        --os.exit()
+        --os.exit() -- Not possible in VEXT - wait to do this whole thing after reorganising this code.
     else
         print('Operation Firestorm MP_012 Conquest Large being loaded - loading '..spMap)
     end
@@ -660,7 +660,7 @@ end)]]
 
 -- United States -1857, 73, -271
 
-ResourceManager:RegisterInstanceLoadHandler(Guid('C1649E85-AFEF-4D3B-80B9-AB847FA7536C'), Guid('6AA1D505-D1FD-49AF-866B-F833C35E1933'), function(instance)
+ResourceManager:RegisterInstanceLoadHandler(Guid('C1649E85-AFEF-4D3B-80B9-AB847FA7536C'), Guid('6AA1D505-D1FD-49AF-866B-F833C35E1933'), function(instance) -- Move spawn (does nothing?)
 
     local thisInstance = ReferenceObjectData(instance)
     thisInstance:MakeWritable()
@@ -668,9 +668,130 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('C1649E85-AFEF-4D3B-80B9-AB847F
 
 end)
 
+local venomSpawn1 = LinearTransform(            -- Using same
+    Vec3(0.747369, -0.042789, -0.663029),
+    Vec3(0.024834, 0.999026, -0.036480),
+    Vec3(0.663945, 0.010798, 0.747704),
+    Vec3(-2116.036377, 75.144028, -498.519623))
+
+local venomSpawn2 = LinearTransform(            -- Replaces F/A-18E
+    Vec3(0.747369, -0.042789, -0.663029),
+    Vec3(0.024834, 0.999026, -0.036480),
+    Vec3(0.663945, 0.010798, 0.747704),
+    Vec3(-2106.498291, 74.888382, -509.731293))
+
+local venomSpawn3 = LinearTransform(            -- Replaces F/A-18E
+    Vec3(0.747369, -0.042789, -0.663029),
+    Vec3(0.024834, 0.999026, -0.036480),
+    Vec3(0.663945, 0.010798, 0.747704),
+    Vec3(-2096.96, 74.888382, -529.94))
+
+local humveeSpawn1 = LinearTransform(           -- Replacing Growler
+    Vec3(0.747369, -0.042789, -0.663029),
+    Vec3(0.036512, 0.999297, -0.008560),
+    Vec3(0.726127, -0.020644, 0.687251),
+    Vec3(-2094.206055, 74.012596, -526.605408)
+)
+
+local humveeSpawn2 = LinearTransform(           -- New
+    Vec3(0.747369, -0.042789, -0.663029),
+    Vec3(0.030272, 0.999542, 0.000238),
+    Vec3(0.647858, -0.019803, 0.761504),
+    Vec3(-2086.113037, 73.799789, -533.578979)
+)
+
+local humveeSpawn3 = LinearTransform(          -- New
+    Vec3(0.747369, -0.042789, -0.663029),
+    Vec3(0.030272, 0.999542, 0.000238),
+    Vec3(0.647858, -0.019803, 0.761504),
+    Vec3(-2078.01, 73.799789, -540.55)
+)
+
+local humveeSpawn4 = LinearTransform(          -- New
+    Vec3(0.747369, -0.042789, -0.663029),
+    Vec3(0.030272, 0.999542, 0.000238),
+    Vec3(0.647858, -0.019803, 0.761504),
+    Vec3(-2069.91, 73.799789, -574.52)
+)
+
+local abramsSpawn1 = LinearTransform(           -- Using same
+    Vec3(0.748066, 0.031152, -0.662893),
+    Vec3(0.016937, 0.997676, 0.065999),
+    Vec3(0.663408, -0.060599, 0.745800),
+    Vec3(-2115.694092, 76.031181, -471.987762)
+)
+
+local abramsSpawn2 = LinearTransform(           -- Using same
+    Vec3(0.772469, 0.027369, -0.634462),
+    Vec3(0.024847, 0.997003, 0.073260),
+    Vec3(0.634566, -0.072355, 0.769474),
+    Vec3(-2103.350586, 75.885071, -482.474304)
+)
+
+local abramsSpawn3 = LinearTransform(           -- Using same
+    Vec3(0.772469, 0.027369, -0.634462),
+    Vec3(0.024847, 0.997003, 0.073260),
+    Vec3(0.634566, -0.072355, 0.769474),
+    Vec3(-2091.01, 75.885071, -492.95)
+)
+
+local abramsSpawn4 = LinearTransform(           -- Using same
+    Vec3(0.772469, 0.027369, -0.634462),
+    Vec3(0.024847, 0.997003, 0.073260),
+    Vec3(0.634566, -0.072355, 0.769474),
+    Vec3(-2078.67, 75.885071, -503.43)
+)
+
+local abramsSpawn5 = LinearTransform(           -- Replacing LAV-AD
+    Vec3(0.772469, 0.027369, -0.634462),
+    Vec3(0.024847, 0.997003, 0.073260),
+    Vec3(0.634566, -0.072355, 0.769474),
+    Vec3(-2066.33, 75.885071, -513.91)
+)
+
+local abramsSpawn6 = LinearTransform(           -- Replacing AH-1
+    Vec3(0.772469, 0.027369, -0.634462),
+    Vec3(0.024847, 0.997003, 0.073260),
+    Vec3(0.634566, -0.072355, 0.769474),
+    Vec3(-2053.99, 75.885071, -524.39)
+)
+
+--[[ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'), Guid('5DF090F3-3918-443B-A16C-3940EFC71266'), function(instance) -- Abrams spawn
+
+    local thisInstance = VehicleSpawnReferenceObjectData(instance)
+    thisInstance:MakeWritable()
+
+    thisInstance.blueprintTransform = LinearTransform(
+        Vec3(),
+        Vec3(),
+        Vec3(),
+        Vec3()
+    )
+
+    thisInstance.blueprint = 
+
+end)]]
+
+--[[ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'), Guid('5DF090F3-3918-443B-A16C-3940EFC71266'), function(instance) -- Abrams spawn
+
+    local thisInstance = VehicleSpawnReferenceObjectData(instance)
+    thisInstance:MakeWritable()
+
+    thisInstance.blueprintTransform = LinearTransform(
+        Vec3(),
+        Vec3(),
+        Vec3(),
+        Vec3()
+    )
+
+    thisInstance.blueprint = 
+
+end)]]
+
+
 -- Middle Eastern Coalition 164, 77, -1047
 
-ResourceManager:RegisterInstanceLoadHandler(Guid('C1649E85-AFEF-4D3B-80B9-AB847FA7536C'), Guid('E78C2DC8-9CA8-4458-B54F-57DCA1B559E4'), function(instance)
+ResourceManager:RegisterInstanceLoadHandler(Guid('C1649E85-AFEF-4D3B-80B9-AB847FA7536C'), Guid('E78C2DC8-9CA8-4458-B54F-57DCA1B559E4'), function(instance) -- Move spawn (does nothing?)
 
     local thisInstance = ReferenceObjectData(instance)
     thisInstance:MakeWritable()
