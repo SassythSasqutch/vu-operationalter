@@ -14,9 +14,9 @@ Events:Subscribe('Level:LoadResources', function(levelName, gameMode, round, rou
     --print('Custom server banner set: '..tostring(banner))
 end)
 
--- Temp disable vehicles
+--[[ Temp disable vehicles
 Events:Subscribe('Level:LoadResources', function(levelName, gameMode, round, roundsPerMap)
     vicSpawn = RCON:SendCommand('vars.vehicleSpawnAllowed', {'false'})
     print('Disabled vehicle spawn:')
     print(vicSpawn)
-end)
+end)]]
