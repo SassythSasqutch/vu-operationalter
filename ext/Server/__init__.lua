@@ -11,7 +11,7 @@ ServerUtils:SetCustomMapName('Operation Alter') -- May want to change this for d
 -- Set server banner
 Events:Subscribe('Level:LoadResources', function(levelName, gameMode, round, roundsPerMap)
     local banner = RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/eiDLOtJ.jpg'}) -- May want to change this for different maps
-    print(banner)
+    print('Custom server banner set: '..banner)
 end)
 
 -----------------------
