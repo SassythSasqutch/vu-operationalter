@@ -1,6 +1,6 @@
 -- Janssent is to thank for the idea behind this - loading an MP map and adding the SP terrain, instead of loading an SP map and adding the MP logic (because, seriously, fuck that second approach)
 
-spMap = 'sp_tank' -- The SP map to load - there are also some GUIDs for directories and terrain data to change when converting this to other maps. Where this has to be done, there is a comment at the end of the line.
+spMap = 'sp_tank' -- The SP or COOP map to load - there are also some GUIDs for directories and terrain data to change when converting this to other maps. Where this has to be done, there is a comment at the end of the line.
 
 -- Check map being loaded
 Events:Subscribe('Level:LoadResources', function(levelName, gameMode, isDedicatedServer)
