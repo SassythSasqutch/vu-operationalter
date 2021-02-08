@@ -755,6 +755,8 @@ end)
 
 -- North Kashan (E) GUID 14E0CAFF-1BBB-42C4-BA24-2DB957928A71 (Flag GUID BC84FAAA-9D77-480B-8E0A-376C91757994) ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+-- TODO: Cap Zone and Flag Pos are WRONG
+
 ResourceManager:RegisterInstanceLoadHandler(Guid('C1649E85-AFEF-4D3B-80B9-AB847FA7536C'), Guid('14E0CAFF-1BBB-42C4-BA24-2DB957928A71'), function(instance)
 
     local thisInstance = VolumeVectorShapeData(instance)

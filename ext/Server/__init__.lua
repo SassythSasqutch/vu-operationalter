@@ -20,3 +20,13 @@ Events:Subscribe('Level:LoadResources', function(levelName, gameMode, round, rou
     print('Disabled vehicle spawn:')
     print(vicSpawn)
 end)]]
+
+-- Reload cmd
+
+NetEvents:Subscribe('ReloadMap', function(connectedPlayer)
+
+	print('Force reloading map...')
+
+	RCON:SendCommand('mapList.runNextRound')
+
+end)
