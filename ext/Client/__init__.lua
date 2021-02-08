@@ -27,3 +27,13 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1A
     thisInstance.fields[19].value = 'CString "Construction Site"' -- Default Army Outpost
 
 end)
+
+-- Restart round send cmd
+
+Console:Register('reload', 'Reloads current map.', function(args)
+
+    NetEvents:Send('ReloadMap', thisPlayer)
+
+    print('Informed server to reload map!')
+
+end)
