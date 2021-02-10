@@ -12,19 +12,19 @@ Events:Subscribe('Level:LoadResources', function(levelName, gameMode, isDedicate
     end
 end)
 
-require('__shared/MpTerrainAssetRemove.lua')
+require('__shared/MpTerrainAssetRemove')
 
-require('__shared/SpTerrainDataPrepare.lua')
+require('__shared/SpTerrainDataPrepare')
 
-require('__shared/TerrainReplace.lua')
+require('__shared/TerrainReplace')
 
-require('__shared/MpTerrainBlock.lua')
+require('__shared/MpTerrainBlock')
 
-require('__shared/SkyboxReplace.lua')
+require('__shared/SkyboxReplace')
 
-require('__shared/SpReferenceDataLoad.lua')
+require('__shared/SpReferenceDataLoad')
 
-require('__shared/SpLogicExclude.lua')
+require('__shared/SpLogicExclude')
 
 require('__shared/MapModifications')
 

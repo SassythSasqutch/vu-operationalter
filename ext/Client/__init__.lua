@@ -28,12 +28,4 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1A
 
 end)
 
--- Restart round send cmd
-
-Console:Register('reload', 'Reloads current map.', function(args)
-
-    NetEvents:Send('ReloadMap', thisPlayer)
-
-    print('Informed server to reload map!')
-
-end)
+require('ForceRoundRestartCommand_Client')

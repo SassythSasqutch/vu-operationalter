@@ -21,12 +21,4 @@ Events:Subscribe('Level:LoadResources', function(levelName, gameMode, round, rou
     print(vicSpawn)
 end)]]
 
--- Reload cmd
-
-NetEvents:Subscribe('ReloadMap', function(connectedPlayer)
-
-	print('Force reloading map...')
-
-	RCON:SendCommand('mapList.runNextRound')
-
-end)
+require('ForceRoundRestartCommand_Server')
