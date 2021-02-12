@@ -1,15 +1,13 @@
+print('Starting shared script \'SpTerrainDataPrepare.lua\'...')
+
 --------------------------
 -- Prepare SP_Tank data --
 --------------------------
 
-Events:Subscribe('Level:LoadResources', function()
-
-    print('Mounting SP Chunks...')
-    ResourceManager:MountSuperBundle('spchunks')
-    print('Mounting SP level...')
-    ResourceManager:MountSuperBundle('levels/'..spMap..'/'..spMap)
-
-end)
+print('Mounting SP Chunks...')
+ResourceManager:MountSuperBundle('spchunks')
+print('Mounting SP level...')
+ResourceManager:MountSuperBundle('levels/'..spMap..'/'..spMap)
 
 Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compartment)
 
@@ -97,7 +95,7 @@ Events:Subscribe('Level:RegisterEntityResources', function(levelData)
     ResourceManager:AddRegistry(spLevelOverpassRegistry, ResourceCompartment.ResourceCompartment_Game)
 
     -- Drive to Bank 1
-    local spLevelDrive1Registry = ResourceManager:FindInstanceByGuid(Guid('85F2A766-9083-4F0F-A11D-CEE62AF439FE'), Guid('A89EEE65-BA0D-4F3F-DD63-1C219A8A0F4E'))
+    --[[local spLevelDrive1Registry = ResourceManager:FindInstanceByGuid(Guid('85F2A766-9083-4F0F-A11D-CEE62AF439FE'), Guid('A89EEE65-BA0D-4F3F-DD63-1C219A8A0F4E'))
     ResourceManager:AddRegistry(spLevelDrive1Registry, ResourceCompartment.ResourceCompartment_Game)
 
     -- Drive to Bank 2 
@@ -110,6 +108,6 @@ Events:Subscribe('Level:RegisterEntityResources', function(levelData)
 
     -- Bank Plaza
     local spLevelBankRegistry = ResourceManager:FindInstanceByGuid(Guid('C6B7EE89-A89E-4E9B-9D8E-9487ED2C76E7'), Guid('7B073BA8-6A43-F742-E63D-E164A1D29A63'))
-    ResourceManager:AddRegistry(spLevelBankRegistry, ResourceCompartment.ResourceCompartment_Game)
+    ResourceManager:AddRegistry(spLevelBankRegistry, ResourceCompartment.ResourceCompartment_Game)]]
 
 end)

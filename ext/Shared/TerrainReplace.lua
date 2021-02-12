@@ -1,3 +1,5 @@
+print('Starting shared script \'TerrainReplace.lua\'...')
+
 ---------------------
 -- Replace terrain --
 ---------------------

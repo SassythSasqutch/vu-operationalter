@@ -1,3 +1,5 @@
+print('Starting shared script \'SpLogicExclude.lua\'...')
+
 ----------------------
 -- Exclude SP logic --
 ----------------------

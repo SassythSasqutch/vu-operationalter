@@ -1,3 +1,5 @@
+print('Starting shared script \'SpReferenceDataLoad.lua\'...')
+
 ----------------------------------------------------------------
 -- Load relevant SP_Tank WorldPart- and SubWorldReferenceData --
 ----------------------------------------------------------------
@@ -164,7 +166,7 @@ Events:Subscribe('Partition:Loaded', function(partition)
     -- Drive to Bank Plaza 1 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     --print('Injecting Drive to Bank Plaza 1 reference data...')
-    local spLevelDrive1ReferenceObjectData = SubWorldReferenceObjectData(ResourceManager:FindInstanceByGuid(Guid('A263A077-CA17-11DF-830F-E4337AA80D37'), Guid('E325304E-551E-4041-ADE1-D9334982209B')))
+    --[[local spLevelDrive1ReferenceObjectData = SubWorldReferenceObjectData(ResourceManager:FindInstanceByGuid(Guid('A263A077-CA17-11DF-830F-E4337AA80D37'), Guid('E325304E-551E-4041-ADE1-D9334982209B')))
     mpLevelDrive1ReferenceObjectData = SubWorldReferenceObjectData(spLevelDrive1ReferenceObjectData:Clone(Guid('M0000000-0000-0000-0000-000000000000')))
     mpLevelDrive1ReferenceObjectData:MakeWritable()
     mpLevelDrive1ReferenceObjectData.autoLoad = true
@@ -207,7 +209,7 @@ Events:Subscribe('Partition:Loaded', function(partition)
     partition:AddInstance(mpLevelBankReferenceObjectData)
 
     -- Add to LevelData objects array
-    mpLevelData.objects:add(mpLevelBankReferenceObjectData)
+    mpLevelData.objects:add(mpLevelBankReferenceObjectData)]]
 
 end)
 

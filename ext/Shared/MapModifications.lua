@@ -1,5 +1,7 @@
 -- NOTE: This map is just a showcase - it's not good, bc I'm not a map maker, and didn't trust myself to make much other than what's already there.
 
+print('Starting shared script \'MapModifications.lua\'...')
+
 --------------------------------------------------------------------------
 -- US/MEC bases (US at Thunder Run start, MEC in South Kashan garrison) --
 --------------------------------------------------------------------------

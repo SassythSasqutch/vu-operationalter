@@ -2,7 +2,7 @@
 
 NetEvents:Subscribe('ReloadMap', function(connectedPlayer)
 
-	print('Force reloading map...')
+	print('Force skipping round...')
 
 	RCON:SendCommand('mapList.runNextRound')
 

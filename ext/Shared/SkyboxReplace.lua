@@ -1,3 +1,5 @@
+print('Starting shared script \'SkyboxReplace.lua\'...')
+
 --------------------
 -- Replace skybox --
 --------------------

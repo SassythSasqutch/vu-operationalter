@@ -1,3 +1,5 @@
+print('Starting shared script \'MpTerrainAssetRemove.lua\'...')
+
 --------------------------
 -- Remove MP_012 assets --
 --------------------------
