@@ -1,13 +1,13 @@
-print('Starting shared script \'SpTerrainDataPrepare.lua\'...')
+print('Starting shared script \'DataLoad.lua\'...')
 
 --------------------------
 -- Prepare SP_Tank data --
 --------------------------
 
-print('Mounting SP Chunks...')
-ResourceManager:MountSuperBundle('spchunks')
 print('Mounting SP level...')
 ResourceManager:MountSuperBundle('levels/'..spMap..'/'..spMap)
+print('Mounting Gulf of Oman...')
+ResourceManager:MountSuperBundle('levels/xp1_002/xp1_002') -- Teheran Highway only for BMP and a couple map-making assets
 
 Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compartment)
 
@@ -15,6 +15,8 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
         print('Injecting bundles...')
 
         bundles = {
+            'levels/xp1_002/xp1_002', -- Teheran Highway only for BMP and a couple map-making assets]]
+            'levels/xp1_002/cq_s', -- Teheran Highway Conquest Small
             'levels/'..spMap..'/'..spMap,
             'levels/sp_tank/backdrop', -- Following are specific to sp_tank (see Powback's list of bundles on his VU-Wiki github repo)
             'levels/sp_tank/desertfort', -- To change
@@ -40,6 +42,11 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
 end)
 
 Events:Subscribe('Level:RegisterEntityResources', function(levelData)
+
+    -- Teheran Highway Conquest Small (for BTR, map-making assets)
+    print('Adding Gulf of Oman CQS registry...')
+    local teheranHighwayRegistry = ResourceManager:FindInstanceByGuid(Guid('BA57F26B-896D-4745-80EC-2148AA4FABED'), Guid('4CA67086-4270-BDEC-C570-A5A709959189'))
+    ResourceManager:AddRegistry(teheranHighwayRegistry, ResourceCompartment.ResourceCompartment_Game)
 
     -- Main
     print('Adding SP level registry...')

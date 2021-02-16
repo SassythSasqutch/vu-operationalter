@@ -6,18 +6,21 @@ spMap = 'sp_tank' -- The SP or COOP map to load - there are also some GUIDs for 
 Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() ~= 'Levels/MP_012/MP_012' or SharedUtils:GetCurrentGameMode() ~= 'ConquestLarge0' then
-        print('Server is not loading Operation Firestorm MP_012 Conquest Large, but \''..SharedUtils:GetLevelName()..'\' for \''..SharedUtils:GetCurrentGameMode()..'\' - closing...')
+        print('Server is not loading Operation Firestorm MP_012 Conquest Large, but \''..SharedUtils:GetLevelName()..'\' for \''..SharedUtils:GetCurrentGameMode()..'\' - doing nothing...')
         return
     else
-        print('Operation Firestorm MP_012 Conquest Large being loaded - loading '..spMap..'...')
-        require('__shared/MpTerrainAssetRemove')
-        require('__shared/SpTerrainDataPrepare')
-        require('__shared/TerrainReplace')
-        require('__shared/MpTerrainBlock')
-        require('__shared/SkyboxReplace')
-        require('__shared/SpReferenceDataLoad')
-        require('__shared/SpLogicExclude')
-        require('__shared/MapModifications')
+        print('Operation Firestorm MP_012 Conquest Large being loaded - replacing with '..spMap..'...')
+        require '__shared/DataLoad'
+        require '__shared/MpTerrainAssetRemove'
+        require '__shared/TerrainReplace'
+        require '__shared/MpTerrainBlock'
+        require '__shared/SkyboxReplace'
+        require '__shared/SpReferenceDataLoad'
+        require '__shared/SpLogicExclude'
+        require '__shared/MapModifications/CQL_MainDeployments'
+        require '__shared/MapModifications/CQL_Objectives'
+        require '__shared/MapModifications/CQL_ObjectiveSpawns'
+        require '__shared/MapModifications/CQL_OOB'
     end
 
 end)
