@@ -69,16 +69,6 @@ function FirestormCqlCreateVehicle(blueprint, pos, newGuid, indexInBlueprint, te
     local firestormCqlLogicPartition = ResourceManager:FindDatabasePartition(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'))
     firestormCqlLogicPartition:AddInstance(vehicleRefData)
 
-    -- Add link connection with Team 2 Deployment - GUID E78C2DC8-9CA8-4458-B54F-57DCA1B559E4, event '-275573010'
-
-    --[[local vehicleLinkConnection = LinkConnection()
-    vehicleLinkConnection.source = ResourceManager:FindInstanceByGuid(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'), Guid('E78C2DC8-9CA8-4458-B54F-57DCA1B559E4')) -- MEC Deployment
-    vehicleLinkConnection.target = vehicleRefData
-    vehicleLinkConnection.sourceFieldId = -275573010
-    vehicleLinkConnection.targetFieldId = 0
-
-    firestormCqlSubWorldData.linkConnections:add(vehicleLinkConnection)]]
-
     -- Add to registry
 
     Events:Subscribe('Level:RegisterEntityResources', function(levelData)
