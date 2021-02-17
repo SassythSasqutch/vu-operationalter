@@ -96,23 +96,21 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('4D91408A-6F09-4583-B92E-B6E710
 
 end)
 
--- UH-1Y Spawn (using old)
+-- UH-1Y Spawn (generated new)
 
-ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'), Guid('F9AEEE45-9C28-4517-8AF9-79EC23DE322C'), function(instance)
+ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1AD06FCF'), Guid('252D6BEC-B56C-488F-85AB-5FD3E14EC949'), function(instance) -- Firestorm CQL Primary SubWorld Instance
 
-    local thisInstance = ReferenceObjectData(instance)
-    thisInstance:MakeWritable()
-
+    local venomBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('97945D87-011D-11E0-B97C-FC495C335A52'), Guid('0E09B2D0-BA4A-1509-E1D2-949FB0C04DBE')))
+    local newVenomGuid = Guid('VIC0000U-0000-0000-0000-000000000000')
     local venomSpawn1 = LinearTransform(
         Vec3(0.747369, -0.042789, -0.663029),
         Vec3(0.024834, 0.999026, -0.036480),
         Vec3(0.663945, 0.010798, 0.747704),
         Vec3(-2116.036377, 75.144028, -498.519623)
     )
+    FirestormCqlCreateVehicle(venomBp, venomSpawn1, newVenomGuid, 61518, TeamId.TeamNeutral, false)
 
-    thisInstance.blueprintTransform = venomSpawn1
-
-end)
+end) 
 
 -- HMMWV Spawn (replacing M1A1)
 
@@ -327,6 +325,16 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1A
 
 end)
 
+-- Disable original UH-1Y
+
+ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'), Guid('F9AEEE45-9C28-4517-8AF9-79EC23DE322C'), function(instance)
+
+    local thisInstance = ReferenceObjectData(instance)
+    thisInstance:MakeWritable()
+    thisInstance.blueprint = nil
+
+end)
+
 -- Disable F/A-18
 
 ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'), Guid('1FF0C503-EDD0-4228-8E6D-0379BBC16DDC'), function(instance)
@@ -453,21 +461,19 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('D32EE752-4C4D-4359-8C10-DA1B2B
 
 end)
 
--- Ka-60 Spawn (using old)
+-- Ka-60 Spawn (generating new)
 
-ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'), Guid('94F815AE-BED7-4DFA-BA90-225DA2DDBFF7'), function(instance)
+ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1AD06FCF'), Guid('252D6BEC-B56C-488F-85AB-5FD3E14EC949'), function(instance) -- Firestorm CQL Primary SubWorld Instance
 
-    local thisInstance = ReferenceObjectData(instance)
-    thisInstance:MakeWritable()
-
+    local ka60Bp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('2EA804A7-8232-11E0-823A-BD52CA6DC6B3'), Guid('D68E417F-6103-5140-3ABC-4C7505160A09')))
+    local newka60Guid = Guid('VIC0000V-0000-0000-0000-000000000000')
     local kasatkaSpawn1 = LinearTransform(
         Vec3(0.946353, 0.015726, 0.322752),
         Vec3(0.011479, 0.996549, -0.082215),
         Vec3(-0.322931, 0.081509, 0.942906),
         Vec3(182.035660, 78.225952, -1043.902954)
     )
-
-    thisInstance.blueprintTransform = kasatkaSpawn1
+    FirestormCqlCreateVehicle(ka60Bp, kasatkaSpawn1, newka60Guid, 61519, TeamId.TeamNeutral, false)
 
 end)
 
@@ -716,6 +722,16 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
     )
 
     thisInstance.transform = bmpSpawn4
+
+end)
+
+-- Disable original Ka-60
+
+ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'), Guid('94F815AE-BED7-4DFA-BA90-225DA2DDBFF7'), function(instance)
+
+    local thisInstance = ReferenceObjectData(instance)
+    thisInstance:MakeWritable()
+    thisInstance.blueprint = nil
 
 end)
 

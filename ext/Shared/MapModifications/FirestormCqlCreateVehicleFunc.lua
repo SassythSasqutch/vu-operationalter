@@ -45,7 +45,7 @@ function FirestormCqlCreateVehicle(blueprint, pos, newGuid, indexInBlueprint, te
     vehicleRefData.isDynamicSpawn = false
     vehicleRefData.airdropTransform = LinearTransform(Vec3(1,0,0),Vec3(0,1,0),Vec3(0,0,1),Vec3(0,0,0))
     vehicleRefData.wreckDuration = 0.0
-    vehicleRefData.setTeamOnSpawn = true
+    vehicleRefData.setTeamOnSpawn = lockedToTeam
     vehicleRefData.affectedByImpulse = true
     vehicleRefData.enterRestriction = EntryEnterRestriction.EntryEnterRestriction_NoRestriction
     vehicleRefData.botBailWhenHealthBelow = 0.0
