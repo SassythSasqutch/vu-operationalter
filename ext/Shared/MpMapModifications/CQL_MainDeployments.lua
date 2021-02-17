@@ -477,7 +477,7 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1A
 
 end)
 
--- Disable misbehaving buggy (doesn't work?)
+-- Disable misbehaving buggy (doesn't work?) (598.333984, 121.450035, -222.365372)
 
 ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'), Guid('9C4FEA95-4F4C-419F-9040-2A5A0DAF83C5'), function(instance)
 

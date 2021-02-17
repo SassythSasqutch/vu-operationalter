@@ -18,11 +18,12 @@ Events:Subscribe('Level:LoadResources', function()
         require '__shared/SpReferenceDataLoad'
         require '__shared/SpLogicExclude'
         require '__shared/MpMinimapRemoveTexture'
-        require '__shared/MapModifications/CQL_MainDeployments'
-        require '__shared/MapModifications/CQL_Objectives'
-        require '__shared/MapModifications/CQL_ObjectiveSpawns'
-        require '__shared/MapModifications/CQL_OOB'
-        require '__shared/MapModifications/CQL_CapturePointA_InitialOwnerSet'
+        require '__shared/MpMapModifications/CQL_MainDeployments'
+        require '__shared/MpMapModifications/CQL_Objectives'
+        require '__shared/MpMapModifications/CQL_ObjectiveSpawns'
+        require '__shared/MpMapModifications/CQL_OOB'
+        require '__shared/MpMapModifications/CQL_CapturePointA_InitialOwnerSet'
+        require '__shared/SpMapModifications/RemoveInvisibleWalls'
     end
 
 end)

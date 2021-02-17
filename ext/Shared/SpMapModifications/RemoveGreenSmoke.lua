@@ -1,0 +1,1 @@
+-- FX_Smoke_Thin EffectEntityData
