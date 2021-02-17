@@ -939,7 +939,7 @@ require '__shared/MapModifications/FirestormCqlCreateVehicleFunc'
 
 ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1AD06FCF'), Guid('252D6BEC-B56C-488F-85AB-5FD3E14EC949'), function(instance) -- Firestorm CQL Primary SubWorldData instance
 
-    print('Placing vehicles on capture points...')
+    --print('Placing vehicles on capture points...')
 
     local t90Bp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('60106974-DD7D-11DD-A030-B04E425BA11E'), Guid('60106975-DD7D-11DD-A030-B04E425BA11E')))
     local growlerBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('CF5166FD-6B60-11E0-8ACE-C75FA07B1C42'), Guid('E7A99B55-B5BD-C101-2384-97458D4AC23C')))

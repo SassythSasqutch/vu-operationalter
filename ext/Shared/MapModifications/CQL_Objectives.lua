@@ -162,6 +162,18 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
 
 end)
 
+-- TOW emplacement
+ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'), Guid('F5D4C3BA-99AC-45C7-8B60-840E46070322'), function(instance)
+    local thisInstance = VehicleSpawnReferenceObjectData(instance)
+    thisInstance:MakeWritable()
+    thisInstance.blueprintTransform = LinearTransform(
+        Vec3(0.989639, 0.000000, -0.143577),
+        Vec3(0.000000, 1.000000, 0.000000),
+        Vec3(0.143577, 0.000000, 0.989639),
+        Vec3(278.943298, 97.879692, 360.606445)
+    )
+end)
+
 -- North Kashan (E) GUID 14E0CAFF-1BBB-42C4-BA24-2DB957928A71 (Flag GUID BC84FAAA-9D77-480B-8E0A-376C91757994) ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -- TODO: Flag Pos probably wrong

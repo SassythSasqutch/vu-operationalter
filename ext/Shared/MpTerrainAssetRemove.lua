@@ -113,3 +113,23 @@ end)
 -- Emplacements --
 ------------------
 
+-- CIWS
+ResourceManager:RegisterInstanceLoadHandler(Guid('AA78C8E3-CFB1-46B7-9476-CFA625E97476'), Guid('23D8C664-C706-AE99-05BE-FC39A0C36222'), function(instance)
+    local thisInstance = ReferenceObjectData(instance)
+    thisInstance:MakeWritable()
+    thisInstance.blueprint = nil
+end)
+
+-- Pantsir
+ResourceManager:RegisterInstanceLoadHandler(Guid('AA78C8E3-CFB1-46B7-9476-CFA625E97476'), Guid('56718590-E481-10A5-B5BD-F4A69667970F'), function(instance)
+    local thisInstance = ReferenceObjectData(instance)
+    thisInstance:MakeWritable()
+    thisInstance.blueprint = nil
+end)
+
+-- Kornet emplacement
+ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'), Guid('E8D30612-E9A3-4CAB-84C7-100D5714F489'), function(instance)
+    local thisInstance = VehicleSpawnReferenceObjectData(instance)
+    thisInstance:MakeWritable()
+    thisInstance.enabled = false
+end)
