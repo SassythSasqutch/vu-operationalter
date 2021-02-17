@@ -17,6 +17,7 @@ Events:Subscribe('Level:LoadResources', function()
         require '__shared/SkyboxReplace'
         require '__shared/SpReferenceDataLoad'
         require '__shared/SpLogicExclude'
+        require '__shared/MpMinimapRemoveTexture'
         require '__shared/MapModifications/CQL_MainDeployments'
         require '__shared/MapModifications/CQL_Objectives'
         require '__shared/MapModifications/CQL_ObjectiveSpawns'

@@ -75,9 +75,9 @@ function FirestormCqlCreateVehicle(blueprint, pos, newGuid, indexInBlueprint, te
         local newVehicleRegistry = RegistryContainer()
         newVehicleRegistry.referenceObjectRegistry:add(vehicleRefData)
         ResourceManager:AddRegistry(newVehicleRegistry, ResourceCompartment.ResourceCompartment_Game)
-        print('Created and added registry for new vehicle '..blueprint.name)
+        --print('Created and added registry for new vehicle '..blueprint.name)
     end)
 
-    print('Generated vehicle from '..blueprint.name)
+    --print('Generated vehicle from '..blueprint.name)
 
 end

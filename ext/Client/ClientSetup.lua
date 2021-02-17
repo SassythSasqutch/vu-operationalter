@@ -1,10 +1,10 @@
 print('Starting client script \'ClientSetup.lua\'...')
 
 -- Remove minimap
-Hooks:Install('UI:RenderMinimap', 100, function(hook)
+--[[Hooks:Install('UI:RenderMinimap', 100, function(hook)
     --print('Blocking minimap render...')
     hook:Return()
-end)
+end)]]
 
 ----------------------------
 -- Change objective names --

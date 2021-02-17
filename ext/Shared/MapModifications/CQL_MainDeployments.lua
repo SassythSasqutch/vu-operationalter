@@ -471,13 +471,13 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
 
 end)
 
--- Disable misbehaving buggy
+-- Disable misbehaving buggy (doesn't work?)
 
 ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'), Guid('9C4FEA95-4F4C-419F-9040-2A5A0DAF83C5'), function(instance)
 
     local thisInstance = VehicleSpawnReferenceObjectData(instance)
     thisInstance:MakeWritable()
-    thisInstance.blueprint = nil
+    thisInstance.enabled = false
 
 end)
 

@@ -108,3 +108,8 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('8BB2506F-493A-11DF-B052-CC4B5D
     thisInstance:MakeWritable()
     thisInstance.memberDatas:clear()
 end)
+
+------------------
+-- Emplacements --
+------------------
+
