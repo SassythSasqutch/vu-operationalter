@@ -22,6 +22,7 @@ Events:Subscribe('Level:LoadResources', function()
         require '__shared/MapModifications/CQL_Objectives'
         require '__shared/MapModifications/CQL_ObjectiveSpawns'
         require '__shared/MapModifications/CQL_OOB'
+        require '__shared/MapModifications/CQL_CapturePointA_InitialOwnerSet'
     end
 
 end)
