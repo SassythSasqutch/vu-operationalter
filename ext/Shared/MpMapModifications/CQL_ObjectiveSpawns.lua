@@ -935,7 +935,7 @@ end)
 -- Vehicle Spawns --
 --------------------
 
-require '__shared/MapModifications/FirestormCqlCreateVehicleFunc'
+require '__shared/MpMapModifications/FirestormCqlCreateVehicleFunc'
 
 ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1AD06FCF'), Guid('252D6BEC-B56C-488F-85AB-5FD3E14EC949'), function(instance) -- Firestorm CQL Primary SubWorldData instance
 

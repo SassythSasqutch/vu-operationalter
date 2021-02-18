@@ -4,7 +4,7 @@ print('Starting shared script \'CQL_MainDeployments.lua\'...')
 -- US/MEC bases (US at Thunder Run start, MEC in South Kashan garrison) --
 --------------------------------------------------------------------------
 
-require '__shared/MapModifications/FirestormCqlCreateVehicleFunc'
+require '__shared/MpMapModifications/FirestormCqlCreateVehicleFunc'
 
 -- United States -1857, 73, -271 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
