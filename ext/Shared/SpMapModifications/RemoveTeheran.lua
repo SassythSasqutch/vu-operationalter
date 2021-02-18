@@ -5,7 +5,7 @@ print('Starting shared script \'RemoveTeheran.lua\'...')
 -----------------------------
 -- mp_003_vista
 
-ResourceManager:RegisterInstanceLoadHandler(Guid('F8A44732-4E94-4A0D-A0F5-430636B040A3'), Guid('AE9CFEAF-DD15-4806-B5CE-9F476616A80E'), function(instance) -- Primary instance in HighwayToTeheran_01_LevelArt
+--[[ResourceManager:RegisterInstanceLoadHandler(Guid('F8A44732-4E94-4A0D-A0F5-430636B040A3'), Guid('AE9CFEAF-DD15-4806-B5CE-9F476616A80E'), function(instance) -- Primary instance in HighwayToTeheran_01_LevelArt
 
     local thisPartition = ResourceManager:FindPartitionForInstance(instance)
 
@@ -32,3 +32,25 @@ end)
 -------------------------
 -- Remove Havok Models --
 -------------------------
+
+-- Milad Tower, defined in MICLIC-Highway to Teheran
+ResourceManager:RegisterInstanceLoadHandler(Guid('43B5EA51-153F-4314-BE3C-E10355CB340C'), Guid('BFE1AB53-BC48-3F8E-C295-0C637B941ED1'), function(instance) -- StaticModelGroupEntityData
+
+    --print('Removing Milad Tower model...')
+    local thisInstance = StaticModelGroupEntityData(instance)
+    thisInstance:MakeWritable()
+    thisInstance.enabled = false
+    thisInstance.memberDatas:clear()
+
+end)
+
+-- Most remaining assets along whole Highway (from Objective 'Alter')
+ResourceManager:RegisterInstanceLoadHandler(Guid('2E9745C5-A3FB-4233-94BD-C10A2E310742'), Guid('BA047A46-9D6A-FDFD-C21E-EA7354D12362'), function(instance) -- StaticModelGroupEntityData
+
+    --print('Removing rest of Teheran...')
+    local thisInstance = StaticModelGroupEntityData(instance)
+    thisInstance:MakeWritable()
+    thisInstance.enabled = false
+    thisInstance.memberDatas:clear()
+
+end)]]

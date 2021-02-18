@@ -465,7 +465,7 @@ end)
 
 ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1AD06FCF'), Guid('252D6BEC-B56C-488F-85AB-5FD3E14EC949'), function(instance) -- Firestorm CQL Primary SubWorld Instance
 
-    local ka60Bp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('2EA804A7-8232-11E0-823A-BD52CA6DC6B3'), Guid('D68E417F-6103-5140-3ABC-4C7505160A09')))
+    local ka60Bp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('2C5892FC-37CB-4A4E-92E2-2DD7BAF08A5C'), Guid('B9BAE0F8-72B9-4E1C-B5AD-F9353727C990')))
     local newka60Guid = Guid('VIC0000V-0000-0000-0000-000000000000')
     local kasatkaSpawn1 = LinearTransform(
         Vec3(0.946353, 0.015726, 0.322752),

@@ -7,7 +7,6 @@
 	"HasWebUI": false,
 	"Dependencies": {},
 	"Tags": [
-        "thunderrunterrain",
-        "sp-showcase"
+        "spterrain"
 	]
 }
