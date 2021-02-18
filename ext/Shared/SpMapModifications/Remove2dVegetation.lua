@@ -1,6 +1,6 @@
 print('Starting shared script \'Remove2dVegetation.lua\'...')
 
--- Part of terrain?
+-- Part of terrain. Not possible until we get terrain editing tools.
 
 Events:Subscribe('Partition:Loaded', function(partition)
 
