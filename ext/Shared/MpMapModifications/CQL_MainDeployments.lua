@@ -463,7 +463,7 @@ end)
 
 -- Ka-60 Spawn (generating new)
 
-ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1AD06FCF'), Guid('252D6BEC-B56C-488F-85AB-5FD3E14EC949'), function(instance) -- Firestorm CQL Primary SubWorld Instance
+ResourceManager:RegisterInstanceLoadHandler(Guid('2C5892FC-37CB-4A4E-92E2-2DD7BAF08A5C'), Guid('B9BAE0F8-72B9-4E1C-B5AD-F9353727C990'), function(instance) -- Firestorm CQL Primary SubWorld Instance
 
     local ka60Bp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('2C5892FC-37CB-4A4E-92E2-2DD7BAF08A5C'), Guid('B9BAE0F8-72B9-4E1C-B5AD-F9353727C990')))
     local newka60Guid = Guid('VIC0000V-0000-0000-0000-000000000000')
