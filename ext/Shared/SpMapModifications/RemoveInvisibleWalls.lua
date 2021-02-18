@@ -1,44 +1,67 @@
---print('Starting shared script \'SpTerrainInvisibleWallRemove.lua\'...')
+print('Starting shared script \'RemoveInvisibleWalls.lua\'...')
 
-----------------------------
--- Delete invisible walls --
-----------------------------
+----------------------------------------------
+-- Make havok invisible walls blueprint nil --
+----------------------------------------------
 
--- Search for 'InvisibleCollision' in the partitions for the different parts of the level (e.g. DesertFort, HighwayToTeheran, etc). Find any entries under the StaticModelGroupEntityData MemberDatas array and erase them.
--- For SP_Tank, there are few enough to do it manually with InstanceLoadHandlers, but for some missions you may want to use an iterator instead.
-
--- From Desert Intro
-
---[[ResourceManager:RegisterInstanceLoadHandler(Guid('0F491108-2F72-47CB-8337-6AFBEB459AE6'), Guid('F0234819-F50E-C404-F86B-7FB834E4FEEF'), function(instance) -- To change
-    print('Erasing invisible wall from Desert Intro...')
-    local thisInstance = StaticModelGroupEntityData(instance)
+--InvisibleCollision_01 ObjectBlueprint
+ResourceManager:RegisterInstanceLoadHandler(Guid('A75DADE9-BDC6-11E0-A4AD-D5BD8D209D9C'), Guid('B31F6765-43B1-48FD-CB4A-08718A249877'), function(instance)
+    print('Making InvisibleCollision_01 object nil...')
+    local thisInstance = ObjectBlueprint(instance)
     thisInstance:MakeWritable()
-    thisInstance.memberDatas:erase(1)
+    thisInstance.object = nil
 end)
 
--- From Desert Fort
-
-ResourceManager:RegisterInstanceLoadHandler(Guid('44234CB8-700B-461D-AF51-4FD9555128A7'), Guid('34D6FD99-2707-CB00-2830-382DE45F65B1'), function(instance)
-    print('Erasing invisible walls from Desert Fort...')
-    local thisInstance = StaticModelGroupEntityData(instance)
+-- InvisibleCollision_02 Block 40m ObjectBlueprint
+ResourceManager:RegisterInstanceLoadHandler(Guid('21F3012E-C9A6-11E0-928D-951B45190C6C'), Guid('07DDE615-65E7-3B2B-D343-7320BACDAC89'), function(instance)
+    print('Making InvisibleCollision_02 object nil...')
+    local thisInstance = ObjectBlueprint(instance)
     thisInstance:MakeWritable()
-    thisInstance.memberDatas:erase(41)
-    thisInstance.memberDatas:erase(36)
-    thisInstance.memberDatas:erase(9)
+    thisInstance.object = nil
 end)
 
--- From Highway of Death
+-- InvisibleCollision_02 Sphere 20m ObjectBlueprint
+ResourceManager:RegisterInstanceLoadHandler(Guid('4B03F97D-C9A6-11E0-928D-951B45190C6C'), Guid('041DAF13-822A-DE3C-7738-EB9D560DA065'), function(instance)
+    print('Making InvisibleCollision_02 object nil...')
+    local thisInstance = ObjectBlueprint(instance)
+    thisInstance:MakeWritable()
+    thisInstance.object = nil
+end)
 
+
+-- InvisibleCollision_02 Block 20m ObjectBlueprint
+ResourceManager:RegisterInstanceLoadHandler(Guid('1034FDAD-C9A4-11E0-928D-951B45190C6C'), Guid('7E353E33-A44D-D000-E7B4-D260505B2085'), function(instance)
+    print('Making InvisibleCollision_02 object nil...')
+    local thisInstance = ObjectBlueprint(instance)
+    thisInstance:MakeWritable()
+    thisInstance.object = nil
+end)
+
+-- InvisibleCollision_02 Sphere 8m ObjectBlueprint
+ResourceManager:RegisterInstanceLoadHandler(Guid('25D585AE-C9A7-11E0-928D-951B45190C6C'), Guid('149B3F41-755B-F70E-CB5A-01D5A6A24F8D'), function(instance)
+    print('Making InvisibleCollision_02 object nil...')
+    local thisInstance = ObjectBlueprint(instance)
+    thisInstance:MakeWritable()
+    thisInstance.object = nil
+end)
+
+-- InvisibleCollision_02 Block 10m ObjectBlueprint
+ResourceManager:RegisterInstanceLoadHandler(Guid('D4650FCE-C9A5-11E0-928D-951B45190C6C'), Guid('2148FFAE-9684-8E14-F04D-7035F6C9C886'), function(instance)
+    print('Making InvisibleCollision_02 object nil...')
+    local thisInstance = ObjectBlueprint(instance)
+    thisInstance:MakeWritable()
+    thisInstance.object = nil
+end)
+
+-- One remaining between (-884.27, 902.24) and (-886.23, 1180.99) between A and B flags (HighwayOfDeath.ebx)
+
+-- Temp fix: nuke HighwayOfDeath StaticGroupModelEntityData
 ResourceManager:RegisterInstanceLoadHandler(Guid('C6FEE734-0FBC-475A-8773-16CEE51596D0'), Guid('25E9C356-A21B-BB2E-F960-794BB98DE259'), function(instance)
-    print('Erasing invisible walls from Highway of Death...')
+
+    print('Nuking HighwayofDeath StaticGroupModelEntityData...')
     local thisInstance = StaticModelGroupEntityData(instance)
     thisInstance:MakeWritable()
-    thisInstance.memberDatas:erase(10)
-    thisInstance.memberDatas:erase(8)
-    thisInstance.memberDatas:erase(7)
-    thisInstance.memberDatas:erase(6)
-    thisInstance.memberDatas:erase(4)
-    thisInstance.memberDatas:erase(2)
-end)]]
+    thisInstance.enabled = false
+    thisInstance.memberDatas:clear()
 
--- Fix this - crash on server start (hidden dependencies?)
+end)
