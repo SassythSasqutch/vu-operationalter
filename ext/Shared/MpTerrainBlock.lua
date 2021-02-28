@@ -8,18 +8,18 @@ Hooks:Install('Terrain:Load', 100, function(hook, terrainName)
 
     --print('Loading terrain \''..terrainName..'\'')
 
-    if terrainName == 'levels/mp_012/terrain/mp_012.streamingtree' then
+    if terrainName == 'levels/mp_012/terrain/mp_012.streamingtree' or terrainName == 'levels/xp1_002/terrain_2/gulfterrain_03.streamingtree' then
         --print('Blocking terrain \''..terrainName..'\'.')
         hook:Return()
     end
 
 end)
 
-Hooks:Install('VisualTerrain:Load', 100, function(hook, terrainName) 
+Hooks:Install('VisualTerrain:Load', 100, function(hook, terrainName)
 
     --print('Loading vis terrain \''..terrainName..'\'.')
     
-    if terrainName == 'levels/mp_012/terrain/mp_012.visual' then
+    if terrainName == 'levels/mp_012/terrain/mp_012.visual' or terrainName == 'levels/xp1_002/terrain_2/gulfterrain_03.visual' then
         --print('Blocking visual terrain \''..terrainName..'\'.')
         hook:Return()
     end

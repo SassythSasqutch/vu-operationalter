@@ -6,17 +6,23 @@ print('Starting shared script \'DataLoad.lua\'...')
 
 print('Mounting SP level...')
 ResourceManager:MountSuperBundle('levels/'..spMap..'/'..spMap)
+print('Mounting Back to Karkand chunks...')
+ResourceManager:MountSuperBundle('xp1chunks')
 print('Mounting Gulf of Oman...')
-ResourceManager:MountSuperBundle('levels/xp1_002/xp1_002') -- Teheran Highway only for BMP and a couple map-making assets
+ResourceManager:MountSuperBundle('levels/xp1_002/xp1_002') -- Gulf of Oman for BTR and a couple map-making assets
 
 Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compartment)
+
+    if SharedUtils:GetLevelName() ~= 'Levels/MP_012/MP_012' or SharedUtils:GetCurrentGameMode() ~= 'ConquestLarge0' then
+        return
+    end
 
     if #bundles == 1 and bundles[1] == SharedUtils:GetLevelName() then
         print('Injecting bundles...')
 
         bundles = {
-            'levels/xp1_002/xp1_002', -- Teheran Highway only for BMP and a couple map-making assets]]
-            'levels/xp1_002/cq_s', -- Teheran Highway Conquest Small
+            'levels/xp1_002/xp1_002', -- Gulf of Oman only for BTR and a couple map-making assets
+            'levels/xp1_002/cq_s', -- Gulf of Oman Conquest Small
             'levels/'..spMap..'/'..spMap,
             'levels/sp_tank/backdrop', -- Following are specific to sp_tank (see Powback's list of bundles on his VU-Wiki github repo)
             'levels/sp_tank/desertfort', -- To change
@@ -43,7 +49,11 @@ end)
 
 Events:Subscribe('Level:RegisterEntityResources', function(levelData)
 
-    -- Teheran Highway Conquest Small (for BTR, map-making assets)
+    if SharedUtils:GetLevelName() ~= 'Levels/MP_012/MP_012' or SharedUtils:GetCurrentGameMode() ~= 'ConquestLarge0' then
+        return
+    end
+
+    -- Gulf of Oman Conquest Small (for BTR, map-making assets)
     print('Adding Gulf of Oman CQS registry...')
     local teheranHighwayRegistry = ResourceManager:FindInstanceByGuid(Guid('BA57F26B-896D-4745-80EC-2148AA4FABED'), Guid('4CA67086-4270-BDEC-C570-A5A709959189'))
     ResourceManager:AddRegistry(teheranHighwayRegistry, ResourceCompartment.ResourceCompartment_Game)
@@ -100,21 +110,5 @@ Events:Subscribe('Level:RegisterEntityResources', function(levelData)
     -- Highway Overpass
     local spLevelOverpassRegistry = ResourceManager:FindInstanceByGuid(Guid('8709713A-D295-4774-A81C-5339CB593165'), Guid('A0940976-5CE9-AC53-8EAC-F31DBAF941A7')) -- Get the RegistryContainer for the Highway Overpass partition
     ResourceManager:AddRegistry(spLevelOverpassRegistry, ResourceCompartment.ResourceCompartment_Game)
-
-    -- Drive to Bank 1
-    --[[local spLevelDrive1Registry = ResourceManager:FindInstanceByGuid(Guid('85F2A766-9083-4F0F-A11D-CEE62AF439FE'), Guid('A89EEE65-BA0D-4F3F-DD63-1C219A8A0F4E'))
-    ResourceManager:AddRegistry(spLevelDrive1Registry, ResourceCompartment.ResourceCompartment_Game)
-
-    -- Drive to Bank 2 
-    local spLevelDrive2Registry = ResourceManager:FindInstanceByGuid(Guid('1856E950-1702-4188-8B0F-A6C873A3B4BC'), Guid('96EFA3A7-9D0B-915E-9692-9EAA7C184CB4'))
-    ResourceManager:AddRegistry(spLevelDrive2Registry, ResourceCompartment.ResourceCompartment_Game)
-
-    -- Drive to Bank 3
-    local spLevelDrive3Registry = ResourceManager:FindInstanceByGuid(Guid('825D5256-4FA4-4468-9219-286E6A262D94'), Guid('B907E3FE-47C4-FEB3-D808-08927F13B51A'))
-    ResourceManager:AddRegistry(spLevelDrive3Registry, ResourceCompartment.ResourceCompartment_Game)
-
-    -- Bank Plaza
-    local spLevelBankRegistry = ResourceManager:FindInstanceByGuid(Guid('C6B7EE89-A89E-4E9B-9D8E-9487ED2C76E7'), Guid('7B073BA8-6A43-F742-E63D-E164A1D29A63'))
-    ResourceManager:AddRegistry(spLevelBankRegistry, ResourceCompartment.ResourceCompartment_Game)]]
 
 end)

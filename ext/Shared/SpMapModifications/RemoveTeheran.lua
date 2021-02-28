@@ -5,7 +5,7 @@ print('Starting shared script \'RemoveTeheran.lua\'...')
 -----------------------------
 -- mp_003_vista
 
---[[ResourceManager:RegisterInstanceLoadHandler(Guid('F8A44732-4E94-4A0D-A0F5-430636B040A3'), Guid('AE9CFEAF-DD15-4806-B5CE-9F476616A80E'), function(instance) -- Primary instance in HighwayToTeheran_01_LevelArt
+ResourceManager:RegisterInstanceLoadHandler(Guid('F8A44732-4E94-4A0D-A0F5-430636B040A3'), Guid('AE9CFEAF-DD15-4806-B5CE-9F476616A80E'), function(instance) -- Primary instance in HighwayToTeheran_01_LevelArt
 
     local thisPartition = ResourceManager:FindPartitionForInstance(instance)
 
@@ -53,4 +53,4 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('2E9745C5-A3FB-4233-94BD-C10A2E
     thisInstance.enabled = false
     thisInstance.memberDatas:clear()
 
-end)]]
+end)

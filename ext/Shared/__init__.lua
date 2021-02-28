@@ -24,9 +24,8 @@ Events:Subscribe('Level:LoadResources', function()
         require '__shared/MpMapModifications/CQL_OOB'
         require '__shared/MpMapModifications/CQL_CapturePointA_InitialOwnerSet'
         require '__shared/SpMapModifications/RemoveGreenSmoke'
-        require '__shared/SpMapModifications/RemoveTeheran'
+        --require '__shared/SpMapModifications/RemoveTeheran'
         require '__shared/SpMapModifications/RemoveInvisibleWalls'
-        require '__shared/SpMapModifications/Remove2dVegetation'
     end
 
 end)

@@ -10,9 +10,11 @@ Events:Subscribe('Partition:Loaded', function(partition)
 
     for _, instance in pairs(partition.instances) do
 
-        if instance:Is('VisualTerrainSettings') or instance:Is('VisualTerrainEntityData') then
+        if instance:Is('AlternateSpawnEntityData') then
 
-            print('HOLY SHIT FOUND '..instance.typeInfo.name..' in partition \''..partition.name..'\'...')
+            local thisInstance = AlternateSpawnEntityData(instance)
+            thisInstance:MakeWritable()
+            thisInstance.enabled = false
 
         end
 

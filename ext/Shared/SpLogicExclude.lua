@@ -25,12 +25,11 @@ Events:Subscribe('Partition:Loaded', function(partition)
 
     local loadedInstances = partition.instances
 
-    for _, instance in ipairs(loadedInstances) do
+    for _, instance in pairs(loadedInstances) do
 
         if instance:Is('WorldPartReferenceObjectData') then
 
             local thisInstance = WorldPartReferenceObjectData(instance)
-            thisInstance:MakeWritable()
 
             --print('Found WorldPartReferenceObjectData.')
 
@@ -50,6 +49,7 @@ Events:Subscribe('Partition:Loaded', function(partition)
                 else
                     --print('Excluding instance calling '..thisInstance.blueprint.name)
                 end
+                thisInstance:MakeWritable()
                 thisInstance.excluded = true
             end
 

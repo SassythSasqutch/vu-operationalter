@@ -477,7 +477,15 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('2C5892FC-37CB-4A4E-92E2-2DD7BA
 
 end)
 
--- Disable misbehaving buggy (doesn't work?) (598.333984, 121.450035, -222.365372)
+-- Disable misbehaving buggy (one of the two, maybe)
+
+ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'), Guid('F46D3999-EB85-4549-8445-F32F2516F4F9'), function(instance)
+
+    local thisInstance = VehicleSpawnReferenceObjectData(instance)
+    thisInstance:MakeWritable()
+    thisInstance.enabled = false
+
+end)
 
 ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB'), Guid('9C4FEA95-4F4C-419F-9040-2A5A0DAF83C5'), function(instance)
 

@@ -163,54 +163,6 @@ Events:Subscribe('Partition:Loaded', function(partition)
     -- Add to LevelData objects array
     mpLevelData.objects:add(mpLevelOverpassReferenceObjectData)
 
-    -- Drive to Bank Plaza 1 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    --print('Injecting Drive to Bank Plaza 1 reference data...')
-    --[[local spLevelDrive1ReferenceObjectData = SubWorldReferenceObjectData(ResourceManager:FindInstanceByGuid(Guid('A263A077-CA17-11DF-830F-E4337AA80D37'), Guid('E325304E-551E-4041-ADE1-D9334982209B')))
-    mpLevelDrive1ReferenceObjectData = SubWorldReferenceObjectData(spLevelDrive1ReferenceObjectData:Clone(Guid('M0000000-0000-0000-0000-000000000000')))
-    mpLevelDrive1ReferenceObjectData:MakeWritable()
-    mpLevelDrive1ReferenceObjectData.autoLoad = true
-    partition:AddInstance(mpLevelDrive1ReferenceObjectData)
-
-    -- Add to LevelData objects array
-    mpLevelData.objects:add(mpLevelDrive1ReferenceObjectData)
-
-    -- Drive to Bank Plaza 2 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    --print('Injecting Drive to Bank Plaza 2 reference data...')
-    local spLevelDrive2ReferenceObjectData = SubWorldReferenceObjectData(ResourceManager:FindInstanceByGuid(Guid('A263A077-CA17-11DF-830F-E4337AA80D37'), Guid('24EBE225-12E9-4057-A672-9A9B80D77DE6')))
-    mpLevelDrive2ReferenceObjectData = SubWorldReferenceObjectData(spLevelDrive2ReferenceObjectData:Clone(Guid('N0000000-0000-0000-0000-000000000000')))
-    mpLevelDrive2ReferenceObjectData:MakeWritable()
-    mpLevelDrive2ReferenceObjectData.autoLoad = true
-    partition:AddInstance(mpLevelDrive2ReferenceObjectData)
-
-    -- Add to LevelData objects array
-    mpLevelData.objects:add(mpLevelDrive2ReferenceObjectData)
-
-    -- Drive to Bank Plaza 3 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    --print('Injecting Drive to Bank Plaza 3 reference data...')
-    local spLevelDrive3ReferenceObjectData = SubWorldReferenceObjectData(ResourceManager:FindInstanceByGuid(Guid('A263A077-CA17-11DF-830F-E4337AA80D37'), Guid('B77D72A4-AF5D-4BF0-9717-F3FCE5F160CB')))
-    mpLevelDrive3ReferenceObjectData = SubWorldReferenceObjectData(spLevelDrive3ReferenceObjectData:Clone(Guid('O0000000-0000-0000-0000-000000000000')))
-    mpLevelDrive3ReferenceObjectData:MakeWritable()
-    mpLevelDrive3ReferenceObjectData.autoLoad = true
-    partition:AddInstance(mpLevelDrive3ReferenceObjectData)
-
-    -- Add to LevelData objects array
-    mpLevelData.objects:add(mpLevelDrive3ReferenceObjectData)
-
-    -- Bank Plaza -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    --print('Injecting Bank Plaza reference data...')
-    local spLevelBankReferenceObjectData = SubWorldReferenceObjectData(ResourceManager:FindInstanceByGuid(Guid('A263A077-CA17-11DF-830F-E4337AA80D37'), Guid('0EC1D113-6E58-465D-A716-3B76519D621E')))
-    mpLevelBankReferenceObjectData = SubWorldReferenceObjectData(spLevelBankReferenceObjectData:Clone(Guid('P0000000-0000-0000-0000-000000000000')))
-    mpLevelBankReferenceObjectData:MakeWritable()
-    mpLevelBankReferenceObjectData.autoLoad = true
-    partition:AddInstance(mpLevelBankReferenceObjectData)
-
-    -- Add to LevelData objects array
-    mpLevelData.objects:add(mpLevelBankReferenceObjectData)]]
-
 end)
 
 Events:Subscribe('Level:RegisterEntityResources', function(levelData)
@@ -229,10 +181,6 @@ Events:Subscribe('Level:RegisterEntityResources', function(levelData)
     newRegistry.referenceObjectRegistry:add(mpLevelHighway1ReferenceObjectData) -- Highway to Teheran 1
     newRegistry.referenceObjectRegistry:add(mpLevelHighway2ReferenceObjectData) -- Highway to Teheran 2
     newRegistry.referenceObjectRegistry:add(mpLevelOverpassReferenceObjectData) -- Highway Overpass
-    newRegistry.referenceObjectRegistry:add(mpLevelDrive1ReferenceObjectData)
-    newRegistry.referenceObjectRegistry:add(mpLevelDrive2ReferenceObjectData)
-    newRegistry.referenceObjectRegistry:add(mpLevelDrive3ReferenceObjectData)
-    newRegistry.referenceObjectRegistry:add(mpLevelBankReferenceObjectData)
     ResourceManager:AddRegistry(newRegistry, ResourceCompartment.ResourceCompartment_Game)
 
 end)
