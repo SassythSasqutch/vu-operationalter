@@ -9,4 +9,5 @@ Events:Subscribe('Level:LoadResources', function()
 
 end)
 
-require('ForceSkipRoundCommand_Server')
+require 'ForceSkipRoundCommand_Server'
+require 'MpCustomLevelLoad'

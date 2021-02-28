@@ -1,11 +1,13 @@
 {
 	"Name": "Operation Alter",
 	"Description": "Thunder Run in Conquest Large, US vs MEC.",
-	"Version": "0.5",
+	"Version": "0.8",
 	"Authors": "SassythSasqutch",
 	"HasVeniceEXT": true,
 	"HasWebUI": false,
-	"Dependencies": {},
+	"Dependencies": {
+		"maploader": "^1.0.0"
+	},
 	"Tags": [
         "spterrain"
 	]
