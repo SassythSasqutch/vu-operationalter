@@ -18,14 +18,17 @@ Events:Subscribe('Level:LoadResources', function()
         require '__shared/SpReferenceDataLoad'
         require '__shared/SpLogicExclude'
         require '__shared/MpMinimapRemoveTexture'
+
         require '__shared/MpMapModifications/CQL_MainDeployments'
         require '__shared/MpMapModifications/CQL_Objectives'
         require '__shared/MpMapModifications/CQL_ObjectiveSpawns'
         require '__shared/MpMapModifications/CQL_OOB'
         require '__shared/MpMapModifications/CQL_CapturePointA_InitialOwnerSet'
+
         require '__shared/SpMapModifications/RemoveGreenSmoke'
         require '__shared/SpMapModifications/RemoveTeheran'
         require '__shared/SpMapModifications/RemoveInvisibleWalls'
+        require '__shared/SpMapModifications/RemoveBackdropInit'
     end
 
 end)
