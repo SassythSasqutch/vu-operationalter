@@ -6,6 +6,6 @@ To load this, write '*mp_012 ConquestLarge0 1*' in your MapList.txt. This map is
 
 **MAKE SURE YOU SET '-highResTerrain' AS A LAUNCH COMMAND FOR YOUR SERVER** (you should do this anyway). Without this, the terrain collision gets trippy.
 
-It is important to also note that this map **needs a fresh server to load**. You can load whatever you want afterwards and the mod will get out of the way, but for some reason the server will crash if you load this after having another map playing beforehand. There's no problem with having multiple rounds of this map - it can reload from itself alright.
+It is important to also note that this map **needs a fresh server to load**. ~~You can load whatever you want afterwards and the mod will get out of the way, but for some reason the server will crash if you load this after having another map playing beforehand. There's no problem with having multiple rounds of this map - it can reload from itself alright.~~ At this time, I cannot guarantee that the server will not crash after the end of the round with this mod loaded.
 
 To convert this to other singleplayer or COOP terrains, some work is needed looking through the EBX dump to replace GUIDs - I've chosen to use InstanceLoadHandlers instead of iterating through all instances and looking for blueprint names to speed up the script, but this does mean that more work is needed to convert this for use with different maps. The comments in the code should be useful in doing this. Otherwise, ask me on Discord as @SassythSasqutch#9081.
